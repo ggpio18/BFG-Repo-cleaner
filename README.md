@@ -66,8 +66,8 @@ git push --force
 Congratulations! You have successfully cleaned your Git repository using BFG Repo Cleaner. Always ensure you have backups of your repository before performing such operations, as they can be irreversible.
 
 References
-- BFG Repo Cleaner Documentation
-- Git Documentation
+- [BFG Repo Cleaner Documentation](https://rtyley.github.io/bfg-repo-cleaner/)
+- [Git Documentation](https://git-scm.com/doc)
 
 
 
