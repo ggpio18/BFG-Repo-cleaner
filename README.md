@@ -21,3 +21,11 @@ If your Git repository has become bloated with large or sensitive files, BFG Rep
    Make sure Java is installed on your system. You can verify this by running:
    ```sh
    java -version
+
+## Usage
+## Step 1: Clone Your Repository
+Clone your repository as a bare repository:
+```sh
+git clone --mirror git://example.com/some-big-repo.git
+cd some-big-repo.git
+
