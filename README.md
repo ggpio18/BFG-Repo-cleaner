@@ -28,4 +28,46 @@ Clone your repository as a bare repository:
 ```sh
 git clone --mirror git://example.com/some-big-repo.git
 cd some-big-repo.git
+```
+
+## Step 2: Prepare for Cleaning
+Identify the files you want to remove. Create a file (e.g., delete.txt) listing the names or patterns of the files you want to delete. For example:
+
+```sh
+*.log
+*.bak
+secret.txt
+```
+
+## Step 3: Run BFG Repo Cleaner
+Use BFG Repo Cleaner to delete the specified files:
+```sh
+java -jar bfg.jar --delete-files delete.txt
+```
+You can also use other options, such as --strip-blobs-bigger-than to remove large files:
+```sh
+java -jar bfg.jar --strip-blobs-bigger-than 100M
+```
+
+## Step 4: Clean Your Repository
+Run the following Git commands to finalize the cleaning process:
+```sh
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive
+```
+
+## Step 5: Push Changes
+Push the cleaned repository back to your remote:
+```sh
+git push --force
+```
+
+# Conclusion
+Congratulations! You have successfully cleaned your Git repository using BFG Repo Cleaner. Always ensure you have backups of your repository before performing such operations, as they can be irreversible.
+
+References
+- BFG Repo Cleaner Documentation
+- Git Documentation
+
+
 
